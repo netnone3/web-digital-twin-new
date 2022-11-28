@@ -1,7 +1,13 @@
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+import { Prompt } from '@next/font/google'
 
-export default MyApp
+const prompt = Prompt({ weight: '200' ,subsets: ['prompt'] })
+
+export default function MyApp({ Component, pageProps }) {
+  return (
+    <main className={prompt.className}>
+      <Component {...pageProps} />
+    </main>
+  )
+}
